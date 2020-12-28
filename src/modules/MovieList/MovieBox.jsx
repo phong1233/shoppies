@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Card from '@material-ui/core/Card';
 import CardMedia from '@material-ui/core/CardMedia';
 import Snackbar from '@material-ui/core/Snackbar';
+import CircularProgress from '@material-ui/core/CircularProgress';
 import Typography from '@material-ui/core/Typography';
 import IconButton from '@material-ui/core/IconButton';
 import FavoriteIcon from '@material-ui/icons/Favorite';
@@ -25,6 +26,13 @@ const useStyles = makeStyles({
     zIndex: 10,
     right: 0,
     top: 0
+  },
+  loading: {
+    display: 'flex',
+    height: 444,
+    width: 300,
+    justifyContent: 'center',
+    alignItems: 'center'
   }
 });
 
@@ -82,7 +90,7 @@ export default function MovieBox(props) {
 
   return (
     <Card className={classes.box}>
-      {!loading &&
+      {loading ? <div className={classes.loading}><CircularProgress size={200}/></div> :
         <div>
           <div
             className={movie.Poster === 'N/A' ? styles.showTitle : styles.title}
