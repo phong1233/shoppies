@@ -10,6 +10,7 @@ import InfoIcon from '@material-ui/icons/Info';
 
 import NominationPage from './NominationPage';
 import SearchPage from './SearchPage';
+import SharedNominationPage from './SharedNominationPage';
 
 const useStyles = makeStyles({
   root: {
@@ -59,14 +60,6 @@ function AboutPage() {
   return (
     <div>
       About
-    </div>
-    );
-}
-
-function SharedNominationPage() {
-  return (
-    <div>
-      Shared
     </div>
     );
 }
