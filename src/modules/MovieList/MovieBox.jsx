@@ -45,7 +45,7 @@ export default function MovieBox(props) {
 
   useEffect(() => {
     setLoading(true);
-    fetch(`http://www.omdbapi.com/?i=${props.movie}&apikey=${process.env.REACT_APP_OMDB_API_KEY}`)
+    fetch(`https://www.omdbapi.com/?i=${props.movie}&apikey=${process.env.REACT_APP_OMDB_API_KEY}`)
     .then(res => res.json())
     .then(
       (result) => {

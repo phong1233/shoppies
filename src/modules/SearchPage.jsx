@@ -32,7 +32,7 @@ export default function NominationPage() {
       setError(true);
       return;
     }
-    fetch(`http://www.omdbapi.com/?s=${value}&type=movie&apikey=${process.env.REACT_APP_OMDB_API_KEY}`)
+    fetch(`https://www.omdbapi.com/?s=${value}&type=movie&apikey=${process.env.REACT_APP_OMDB_API_KEY}`)
     .then(res => res.json())
     .then(
       (result) => {
