@@ -8,7 +8,10 @@ const useStyles = makeStyles({
     width: '100%',
     justifyContent: 'center',
     marginTop: '20px',
-    marginBottom: '20px'
+    marginBottom: '20px',
+    paddingRight: '20px',
+    paddingLeft: '20px',
+    textAlign: 'center'
   }
 });
 
