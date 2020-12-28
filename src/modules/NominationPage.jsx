@@ -43,7 +43,7 @@ export default function NominationPage() {
   return (
     <div>
       <Typography className={classes.title} variant='h3'>
-        Nominations
+        Nomination List
       </Typography>
       <div className={classes.title}>
         <Button variant='contained' color='primary' onClick={handleShare}>
