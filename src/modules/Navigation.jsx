@@ -11,6 +11,7 @@ import InfoIcon from '@material-ui/icons/Info';
 import NominationPage from './NominationPage';
 import SearchPage from './SearchPage';
 import SharedNominationPage from './SharedNominationPage';
+import HomePage from './HomePage';
 
 const useStyles = makeStyles({
   root: {
@@ -32,20 +33,20 @@ export default function Navigation() {
   useEffect(() => {
     let url =  require('url');
     let website = url.parse(window.location.href);
-    let page = website.path.substr(1) ? website.path.substr(1) : 'about';
+    let page = website.path.substr(1) ? website.path.substr(1) : 'home';
     setCurrentPage(page);
   }, []);
 
   return (
     <Router>
       <BottomNavigation value={currentPage} onChange={handleChange} className={classes.root}>
-        <BottomNavigationAction component={Link} to='/' label='About' value='about' icon={<InfoIcon />} />
+        <BottomNavigationAction component={Link} to='/' label='Home' value='home' icon={<InfoIcon />} />
         <BottomNavigationAction component={Link} to='/search' label='Search' value='search' icon={<SearchIcon />} />
         <BottomNavigationAction component={Link} to='/nomination' label='Nomination' value='nomination' icon={<FavoriteIcon />} />
       </BottomNavigation>
       <main>
         <Switch>
-          <Route path='/' exact component={AboutPage}/>
+          <Route path='/' exact component={HomePage}/>
           <Route path='/search' exact component={SearchPage}/>
           <Route path='/nomination' exact component={NominationPage}/>
           <Route path='/shared' component={SharedNominationPage}/>
@@ -54,14 +55,6 @@ export default function Navigation() {
       </main>
     </Router>
   );
-}
-
-function AboutPage() {
-  return (
-    <div>
-      About
-    </div>
-    );
 }
 
 function NotFound() {
