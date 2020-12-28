@@ -47,7 +47,7 @@ export default function NominationPage() {
       </Typography>
       <div className={classes.title}>
         <Button variant='contained' color='primary' onClick={handleShare}>
-          Shared
+          Share
         </Button>
       </div>
       <MovieList movies={nominatedMovies} />

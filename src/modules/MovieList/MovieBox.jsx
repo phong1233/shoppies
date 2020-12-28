@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Card from '@material-ui/core/Card';
 import CardMedia from '@material-ui/core/CardMedia';
+import Snackbar from '@material-ui/core/Snackbar';
 import Typography from '@material-ui/core/Typography';
 import IconButton from '@material-ui/core/IconButton';
 import FavoriteIcon from '@material-ui/icons/Favorite';
@@ -31,6 +32,7 @@ export default function MovieBox(props) {
   const classes = useStyles();
   const [nominated, setNominated] = useState(false);
   const [movie, setMovie] = useState(undefined);
+  const [notify, setNotify] = useState(false);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -56,19 +58,26 @@ export default function MovieBox(props) {
 
   const handleNominateMovie = () => {
     let nominationList = JSON.parse(localStorage.getItem('nominations'));
-    nominationList = nominationList ? nominationList : [];
+    nominationList = nominationList ? nominationList.map((e) => e) : [];
 
     if( nominated ) {
       let index = nominationList.indexOf(props.movie);
-      if (index > -1) {
-        nominationList.splice(index, 1);
-      }
+      if (index > -1) nominationList.splice(index, 1);
     }
-    else {
+    else if(nominationList.length < 5) {
       nominationList.push(props.movie);
     }
+
+    if(nominationList.length >= 5) {
+      setNotify(true);
+    }
+
     localStorage.setItem('nominations', JSON.stringify(nominationList));
     setNominated(isNominated());
+  }
+
+  const handleClose = () => {
+    setNotify(false);
   }
 
   return (
@@ -97,6 +106,13 @@ export default function MovieBox(props) {
             className={classes.cover}
             image={movie.Poster}
             title={movie.Title}
+          />
+          <Snackbar
+            anchorOrigin={{ vertical: 'top', horizontal: 'right' }}
+            open={notify}
+            onClose={handleClose}
+            autoHideDuration={3000}
+            message='5 movies have been nominated'
           />
         </div>
       }
