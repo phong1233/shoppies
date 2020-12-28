@@ -9,6 +9,7 @@ import FavoriteIcon from '@material-ui/icons/Favorite';
 import InfoIcon from '@material-ui/icons/Info';
 
 import NominationPage from './NominationPage';
+import SearchPage from './SearchPage';
 
 const useStyles = makeStyles({
   root: {
@@ -58,14 +59,6 @@ function AboutPage() {
   return (
     <div>
       About
-    </div>
-    );
-}
-
-function SearchPage() {
-  return (
-    <div>
-      Search
     </div>
     );
 }

@@ -39,7 +39,6 @@ export default function MovieBox(props) {
     .then(res => res.json())
     .then(
       (result) => {
-        console.log(result);
         setMovie(result);
         setLoading(false);
       }
@@ -77,7 +76,7 @@ export default function MovieBox(props) {
       {!loading &&
         <div>
           <div
-            className={styles.title}
+            className={movie.Poster === 'N/A' ? styles.showTitle : styles.title}
             onClick={ () => {console.log('clicked')}}
           >
             <div>

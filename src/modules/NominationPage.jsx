@@ -8,7 +8,9 @@ const useStyles = makeStyles({
   title: {
     display: 'flex',
     width: '100%',
-    justifyContent: 'center'
+    justifyContent: 'center',
+    marginTop: '20px',
+    marginBottom: '20px'
   }
 });
 
