@@ -30,3 +30,20 @@ npm install
 ```
 npm start
 ```
+
+## Screenshots
+
+### Search Page
+<img src="https://github.com/phong1233/shoppies/blob/master/screenshots/search.png?raw=true"
+     alt="Screenshot search"
+     style="width: 500px;" />
+
+### Nomination Page
+<img src="https://github.com/phong1233/shoppies/blob/master/screenshots/nominees.png?raw=true"
+     alt="Screenshot Nomination page"
+     style="width: 500px;" />
+
+### Mobile Nomination Page
+<img src="https://github.com/phong1233/shoppies/blob/master/screenshots/mobile.png?raw=true"
+     alt="Screenshot Mobile page"
+     style="width: 350px;" />
