@@ -4,6 +4,8 @@ Shoppies is a web application intended to be used to manage movie nominations fo
 
 This application is intended the [Shopify Challenge for Web Developer interns](https://docs.google.com/document/d/1AZO0BZwn1Aogj4f3PDNe1mhq8pKsXZxtrG--EIbP_-w/edit)
 
+[Link to the hosted website of the app](https://friendly-keller-ac6441.netlify.app/)
+
 ## Technologies
 
 * NodeJs
